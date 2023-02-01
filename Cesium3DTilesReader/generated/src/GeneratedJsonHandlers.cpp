@@ -1429,6 +1429,7 @@ AssetJsonHandler::AssetJsonHandler(
     const CesiumJsonReader::ExtensionReaderContext& context) noexcept
     : CesiumJsonReader::ExtensibleObjectJsonHandler(context),
       _version(),
+      _gltfUpAxis(),
       _tilesetVersion() {}
 
 void AssetJsonHandler::reset(
@@ -1455,6 +1456,8 @@ CesiumJsonReader::IJsonHandler* AssetJsonHandler::readObjectKeyAsset(
 
   if ("version"s == str)
     return property("version", this->_version, o.version);
+  if ("gltfUpAxis"s == str)
+    return property("gltfUpAxis", this->_gltfUpAxis, o.gltfUpAxis);
   if ("tilesetVersion"s == str)
     return property("tilesetVersion", this->_tilesetVersion, o.tilesetVersion);
 

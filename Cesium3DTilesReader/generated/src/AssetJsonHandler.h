@@ -30,6 +30,7 @@ protected:
 private:
   Cesium3DTiles::Asset* _pObject = nullptr;
   CesiumJsonReader::StringJsonHandler _version;
+  CesiumJsonReader::StringJsonHandler _gltfUpAxis;
   CesiumJsonReader::StringJsonHandler _tilesetVersion;
 };
 } // namespace Cesium3DTilesReader

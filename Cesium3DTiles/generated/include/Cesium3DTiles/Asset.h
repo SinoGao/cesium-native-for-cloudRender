@@ -22,6 +22,11 @@ struct CESIUM3DTILES_API Asset final : public CesiumUtility::ExtensibleObject {
    */
   std::string version;
 
+  /*
+  * add by gaobo
+  */
+  std::string gltfUpAxis;
+
   /**
    * @brief Application-specific version of this tileset, e.g., for when an
    * existing tileset is updated.
