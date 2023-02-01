@@ -22,9 +22,14 @@ struct CESIUM3DTILES_API Asset final : public CesiumUtility::ExtensibleObject {
    */
   std::string version;
 
-  /*
-  * add by gaobo
-  */
+  /**
+   * @brief B3dm and i3dm tiles embed glTF. According to the glTF spec glTF uses a right-handed coordinate system
+   * and defines the y axis as up.By default embedded models are considered to be y-up, but in order to
+   * support a variety of source data, including models defined directly in WGS84 coordinates, embedded glTF
+   * models may be defined as x-up, y-up, or z-up with the asset.gltfUpAxis property oftileset.json.
+   * In general an implementation should transform glTF assets to z-up at runtime to be consistent with
+   * the z-up coordinate system of the bounding volume hierarchy
+   */
   std::string gltfUpAxis;
 
   /**
